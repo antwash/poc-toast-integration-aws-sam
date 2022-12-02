@@ -1,0 +1,10 @@
+{
+  "TableName": "posIntegrationExpiringAccessTokens",
+  "KeySchema": [
+    { "AttributeName": "ProviderName", "KeyType": "HASH" }
+  ],
+  "AttributeDefinitions": [
+    { "AttributeName": "ProviderName", "AttributeType": "S" }
+  ],
+  "BillingMode": "PAY_PER_REQUEST"
+}

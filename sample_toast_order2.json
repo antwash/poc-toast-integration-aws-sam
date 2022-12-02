@@ -1,0 +1,331 @@
+{
+    "guid": "4b855873-8a2d-410c-aa5d-9adac5a39d00",
+    "entityType": "Order",
+    "externalId": null,
+    "revenueCenter": null,
+    "server": {
+        "guid": "7603e7d5-e9a3-4a4e-9992-6bbe2633c2ff",
+        "entityType": "RestaurantUser",
+        "externalId": null
+    },
+    "lastModifiedDevice": {
+        "id": "18407522ddd4667b"
+    },
+    "source": "In Store",
+    "voidDate": null,
+    "duration": 20,
+    "businessDate": 20200120,
+    "paidDate": "2020-01-21T00:17:29.281+0000",
+    "restaurantService": {
+        "guid": "d559da83-c1d9-461b-ad05-762c5bb03b12",
+        "entityType": "RestaurantService",
+        "externalId": null
+    },
+    "voided": false,
+    "estimatedFulfillmentDate": "2020-01-21T00:47:08.589+0000",
+    "table": null,
+    "requiredPrepTime": "PT30M",
+    "approvalStatus": "APPROVED",
+    "deliveryInfo": null,
+    "serviceArea": null,
+    "curbsidePickupInfo": null,
+    "numberOfGuests": 1,
+    "diningOption": {
+        "guid": "eaeefb8c-0593-42e8-a87f-862559d5c204",
+        "entityType": "DiningOption",
+        "externalId": null
+    },
+    "openedDate": "2020-01-21T00:17:08.589+0000",
+    "voidBusinessDate": null,
+    "checks": [
+        {
+            "guid": "090c5493-c7f4-4a7d-a5de-cd7deb7efeb1",
+            "entityType": "Check",
+            "externalId": null,
+            "displayNumber": "70",
+            "payments": [
+                {
+                    "guid": "8ad5e5b3-5efa-4ee3-a2a4-1088ca1d9ea4",
+                    "entityType": "OrderPayment",
+                    "externalId": null,
+                    "originalProcessingFee": null,
+                    "server": {
+                        "guid": "7603e7d5-e9a3-4a4e-9992-6bbe2633c2ff",
+                        "entityType": "RestaurantUser",
+                        "externalId": null
+                    },
+                    "cashDrawer": {
+                        "guid": "dc6de2f7-87c3-4c97-a777-7e500a29b2ea",
+                        "entityType": "CashDrawer",
+                        "externalId": null
+                    },
+                    "lastModifiedDevice": {
+                        "id": "18407522ddd4667b"
+                    },
+                    "refundStatus": "NONE",
+                    "type": "CASH",
+                    "voidInfo": null,
+                    "checkGuid": "090c5493-c7f4-4a7d-a5de-cd7deb7efeb1",
+                    "otherPayment": null,
+                    "paidDate": "2020-01-21T00:17:29.203+0000",
+                    "orderGuid": "4b855873-8a2d-410c-aa5d-9adac5a39d00",
+                    "cardEntryMode": null,
+                    "paymentStatus": "CAPTURED",
+                    "amount": 16,
+                    "tipAmount": 0,
+                    "amountTendered": 20,
+                    "cardType": null,
+                    "houseAccount": null,
+                    "mcaRepaymentAmount": null,
+                    "createdDevice": {
+                        "id": "18407522ddd4667b"
+                    },
+                    "paidBusinessDate": 20200120,
+                    "last4Digits": null,
+                    "refund": null
+                }
+            ],
+            "appliedDiscounts": [],
+            "lastModifiedDevice": {
+                "id": "18407522ddd4667b"
+            },
+            "voidDate": null,
+            "paidDate": "2020-01-21T00:17:29.281+0000",
+            "appliedLoyaltyInfo": null,
+            "voided": false,
+            "paymentStatus": "CLOSED",
+            "amount": 16,
+            "tabName": null,
+            "taxExempt": false,
+            "openedDate": "2020-01-21T00:17:27.161+0000",
+            "totalAmount": 16,
+            "selections": [
+                {
+                    "guid": "11ca327f-d947-4ca3-9c1a-455b356396d6",
+                    "entityType": "MenuItemSelection",
+                    "externalId": null,
+                    "deferred": false,
+                    "preDiscountPrice": 4,
+                    "voidReason": null,
+                    "optionGroup": null,
+                    "displayName": "Kombucha",
+                    "appliedDiscounts": [],
+                    "modifiers": [],
+                    "seatNumber": -1,
+                    "voidDate": null,
+                    "fulfillmentStatus": "SENT",
+                    "optionGroupPricingMode": null,
+                    "salesCategory": {
+                        "guid": "48dfeaa6-8b55-4971-9465-1b8c3acd5252",
+                        "entityType": "SalesCategory",
+                        "externalId": null
+                    },
+                    "selectionType": "NONE",
+                    "price": 4,
+                    "voided": false,
+                    "appliedTaxes": [],
+                    "itemGroup": {
+                        "guid": "dd6d2c28-0c22-4e46-b077-20cf6f82de67",
+                        "entityType": "MenuGroup",
+                        "externalId": null,
+                        "multiLocationId": "300000007112834305"
+                    },
+                    "item": {
+                        "guid": "874f6ebe-2bb4-412d-973d-2086c5af13f4",
+                        "entityType": "MenuItem",
+                        "externalId": null,
+                        "multiLocationId": "300000007113017680"
+                    },
+                    "taxInclusion": "NOT_INCLUDED",
+                    "quantity": 1,
+                    "receiptLinePrice": 4,
+                    "unitOfMeasure": "NONE",
+                    "refundDetails": null,
+                    "tax": 0,
+                    "diningOption": {
+                        "guid": "eaeefb8c-0593-42e8-a87f-862559d5c204",
+                        "entityType": "DiningOption",
+                        "externalId": null
+                    },
+                    "voidBusinessDate": null,
+                    "createdDate": "2020-01-21T00:17:28.037+0000",
+                    "preModifier": null,
+                    "modifiedDate": "2020-01-21T00:17:28.050+0000"
+                },
+                {
+                    "guid": "e106dc24-6542-4451-aa4b-9fe33068ea06",
+                    "entityType": "MenuItemSelection",
+                    "externalId": null,
+                    "deferred": false,
+                    "preDiscountPrice": 12,
+                    "voidReason": null,
+                    "optionGroup": null,
+                    "displayName": "(In Store) Spicy Kale Caesar",
+                    "appliedDiscounts": [],
+                    "modifiers": [
+                        {
+                            "guid": "f857a8d5-4d63-4fcd-86bb-7ce9bf9c4e2f",
+                            "entityType": "MenuItemSelection",
+                            "externalId": null,
+                            "deferred": false,
+                            "preDiscountPrice": 9,
+                            "voidReason": null,
+                            "optionGroup": {
+                                "guid": "55c19f38-180d-4847-bf14-cd7e96acca56",
+                                "entityType": "MenuOptionGroup",
+                                "externalId": null,
+                                "multiLocationId": "300000007112861332"
+                            },
+                            "displayName": "Basket",
+                            "appliedDiscounts": [],
+                            "modifiers": [],
+                            "seatNumber": -1,
+                            "voidDate": null,
+                            "fulfillmentStatus": "SENT",
+                            "optionGroupPricingMode": "REPLACES_PRICE",
+                            "salesCategory": null,
+                            "selectionType": "NONE",
+                            "price": 9,
+                            "voided": false,
+                            "appliedTaxes": [],
+                            "itemGroup": null,
+                            "item": {
+                                "guid": "25d4e9bd-7d86-4c9f-8073-61eb2e495c7b",
+                                "entityType": "MenuItem",
+                                "externalId": null,
+                                "multiLocationId": "300000007112861335"
+                            },
+                            "taxInclusion": "INHERITED",
+                            "quantity": 1,
+                            "receiptLinePrice": 0,
+                            "unitOfMeasure": "NONE",
+                            "refundDetails": null,
+                            "tax": 0,
+                            "diningOption": {
+                                "guid": "eaeefb8c-0593-42e8-a87f-862559d5c204",
+                                "entityType": "DiningOption",
+                                "externalId": null
+                            },
+                            "voidBusinessDate": null,
+                            "createdDate": "2020-01-21T00:17:28.003+0000",
+                            "preModifier": null,
+                            "modifiedDate": "2020-01-21T00:17:28.046+0000"
+                        },
+                        {
+                            "guid": "7ca21a5e-4212-49d4-ba9a-111e676b986b",
+                            "entityType": "MenuItemSelection",
+                            "externalId": null,
+                            "deferred": false,
+                            "preDiscountPrice": 3,
+                            "voidReason": null,
+                            "optionGroup": {
+                                "guid": "5d7fa084-924b-4ea2-9634-5651570022fa",
+                                "entityType": "MenuOptionGroup",
+                                "externalId": null,
+                                "multiLocationId": "300000007112863906"
+                            },
+                            "displayName": "Chicken",
+                            "appliedDiscounts": [],
+                            "modifiers": [],
+                            "seatNumber": -1,
+                            "voidDate": null,
+                            "fulfillmentStatus": "SENT",
+                            "optionGroupPricingMode": "ADJUSTS_PRICE",
+                            "salesCategory": null,
+                            "selectionType": "NONE",
+                            "price": 3,
+                            "voided": false,
+                            "appliedTaxes": [],
+                            "itemGroup": null,
+                            "item": {
+                                "guid": "7de8b629-41dc-4b94-a07a-c175a4e171dd",
+                                "entityType": "MenuItem",
+                                "externalId": null,
+                                "multiLocationId": "300000007112870328"
+                            },
+                            "taxInclusion": "INHERITED",
+                            "quantity": 1,
+                            "receiptLinePrice": 3,
+                            "unitOfMeasure": "NONE",
+                            "refundDetails": null,
+                            "tax": 0,
+                            "diningOption": {
+                                "guid": "eaeefb8c-0593-42e8-a87f-862559d5c204",
+                                "entityType": "DiningOption",
+                                "externalId": null
+                            },
+                            "voidBusinessDate": null,
+                            "createdDate": "2020-01-21T00:17:28.005+0000",
+                            "preModifier": null,
+                            "modifiedDate": "2020-01-21T00:17:28.048+0000"
+                        }
+                    ],
+                    "seatNumber": -1,
+                    "voidDate": null,
+                    "fulfillmentStatus": "SENT",
+                    "optionGroupPricingMode": null,
+                    "salesCategory": {
+                        "guid": "9edf6d70-d34a-4710-9b59-1a1fb76dbd80",
+                        "entityType": "SalesCategory",
+                        "externalId": null
+                    },
+                    "selectionType": "NONE",
+                    "price": 12,
+                    "voided": false,
+                    "appliedTaxes": [],
+                    "itemGroup": {
+                        "guid": "06c06f3b-9947-43d1-83f3-c3598aa6d71c",
+                        "entityType": "MenuGroup",
+                        "externalId": null,
+                        "multiLocationId": "300000007112825383"
+                    },
+                    "item": {
+                        "guid": "4cf15d3f-6224-4bae-b243-a934554d3787",
+                        "entityType": "MenuItem",
+                        "externalId": null,
+                        "multiLocationId": "300000007112856840"
+                    },
+                    "taxInclusion": "NOT_INCLUDED",
+                    "quantity": 1,
+                    "receiptLinePrice": 9,
+                    "unitOfMeasure": "NONE",
+                    "refundDetails": null,
+                    "tax": 0,
+                    "diningOption": {
+                        "guid": "eaeefb8c-0593-42e8-a87f-862559d5c204",
+                        "entityType": "DiningOption",
+                        "externalId": null
+                    },
+                    "voidBusinessDate": null,
+                    "createdDate": "2020-01-21T00:17:28.022+0000",
+                    "preModifier": null,
+                    "modifiedDate": "2020-01-21T00:17:28.049+0000"
+                }
+            ],
+            "voidBusinessDate": null,
+            "createdDate": "2020-01-21T00:17:28.043+0000",
+            "deleted": false,
+            "createdDevice": {
+                "id": "18407522ddd4667b"
+            },
+            "closedDate": "2020-01-21T00:17:29.281+0000",
+            "deletedDate": "1970-01-01T00:00:00.000+0000",
+            "modifiedDate": "2020-01-21T00:26:33.411+0000",
+            "taxAmount": 0,
+            "appliedServiceCharges": [],
+            "customer": null
+        }
+    ],
+    "deleted": false,
+    "createdDevice": {
+        "id": "18407522ddd4667b"
+    },
+    "createdDate": "2020-01-21T00:17:28.098+0000",
+    "closedDate": "2020-01-21T00:17:29.281+0000",
+    "deletedDate": "1970-01-01T00:00:00.000+0000",
+    "modifiedDate": "2020-01-21T00:26:33.419+0000",
+    "promisedDate": null,
+    "pricingFeatures": [
+        "TAXESV2"
+    ]
+}

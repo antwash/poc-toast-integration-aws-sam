@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  stepfuntion:
+    image: amazon/aws-stepfunctions-local:latest
+    env_file:
+      - aws-stepfunctions-local-credentials.txt
+    ports:
+      - "8083:8083"
+  dynamodb:
+    image: amazon/dynamodb-local:latest
+    ports:
+      - "8000:8000"
+  localstack:
+    image: localstack/localstack:latest
+    ports:
+      - "4566:4566"

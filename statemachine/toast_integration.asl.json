@@ -1,0 +1,97 @@
+{
+	"Comment": "The Toast POS integration step functions state machine.",
+	"StartAt": "PosCognitoAccessToken",
+	"States": {
+		"PosCognitoAccessToken": {
+			"Type": "Task",
+			"Resource": "arn:aws:lambda:us-east-1:123456789012:function:PosCognitoAccessTokenFunction",
+			"Next": "GetToastPartnersAndToastAccessToken",
+			"ResultPath": "$.posCognitoAccessToken"
+		},
+		"GetToastPartnersAndToastAccessToken": {
+			"Type": "Parallel",
+			"Branches": [
+        {
+					"StartAt": "ToastPartners",
+					"States": {
+						"ToastPartners": {
+							"Type": "Task",
+							"Resource": "arn:aws:lambda:us-east-1:123456789012:function:ToastPartnersFunction",
+							"End": true
+						}
+					}
+				},
+				{
+					"StartAt": "ToastAuthAccessToken",
+					"States": {
+						"ToastAuthAccessToken": {
+							"Type": "Task",
+							"Resource": "arn:aws:lambda:us-east-1:123456789012:function:ToastAuthAccessTokenFunction",
+							"End": true
+						}
+					}
+				}
+			],
+			"ResultPath": "$.getToastPartnersAndToastAccessTokenOutput",
+			"Next": "GetToastPartnerLocationOrders"
+		},
+		"GetToastPartnerLocationOrders": {
+			"Type": "Map",
+			"ItemsPath": "$.getToastPartnersAndToastAccessTokenOutput[0].partners",
+			"Parameters": {
+				"partnerLocations.$": "$$.Map.Item.Value.locations",
+				"toastAuthAccessToken.$": "$.getToastPartnersAndToastAccessTokenOutput[1].toastAuthAccessToken"
+			},
+			"Iterator": {
+				"StartAt": "ToastPartnerLocations",
+				"States": {
+					"ToastPartnerLocations": {
+						"Type": "Map",
+						"ItemsPath": "$.partnerLocations",
+						"Parameters": {
+							"location.$": "$$.Map.Item.Value",
+							"toastAuthAccessToken.$": "$.toastAuthAccessToken"
+						},
+						"Iterator": {
+							"StartAt": "GetLocationOrders",
+							"States": {
+								"GetLocationOrders": {
+									"Type": "Task",
+									"Resource": "arn:aws:lambda:us-east-1:123456789012:function:ToastPartnerLocationOrders",
+									"Next": "LocationOrders"
+								},
+								"LocationOrders": {
+									"Type": "Map",
+									"ItemsPath": "$.orders",
+									"Parameters": {
+										"order.$": "$$.Map.Item.Value",
+										"location.$": "$.location"
+									},
+									"Iterator": {
+										"StartAt": "GetPosCognitoAccessToken",
+										"States": {
+											"GetPosCognitoAccessToken": {
+												"Type": "Task",
+												"Resource": "arn:aws:lambda:us-east-1:123456789012:function:PosCognitoAccessTokenFunction",
+												"Next": "IngestLocationToastOrder",
+												"ResultPath": "$.posCognitoAccessToken"
+											},
+											"IngestLocationToastOrder": {
+												"Type": "Task",
+												"Resource": "arn:aws:lambda:us-east-1:123456789012:function:IngestLocationToastOrder",
+												"End": true
+											}
+										}
+									},
+									"End": true
+								}
+							}
+						},
+						"End": true
+					}
+				}
+			},
+			"End": true
+		}
+	}
+}

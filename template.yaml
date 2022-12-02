@@ -1,0 +1,84 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  toast-integration-locally-sam-application
+
+  The SAM application to test the Toast Integration locally
+
+Resources:
+  ToastIntegrationStateMachine:
+    Type: AWS::Serverless::StateMachine
+    Properties:
+      DefinitionUri: statemachine/toast_integration_ask.json
+      Policies:
+        - LambdaInvokePolicy:
+            FunctionName: !Ref PosCognitoAccessTokenFunction
+        - LambdaInvokePolicy:
+            FunctionName: !Ref ToastPartnersFunction
+        - LambdaInvokePolicy:
+            FunctionName: !Ref ToastAuthAccessTokenFunction
+        - LambdaInvokePolicy:
+            FunctionName: !Ref ToastPartnerLocationOrders        
+        - LambdaInvokePolicy:
+            FunctionName: !Ref IngestLocationToastOrder
+  PosCognitoAccessTokenFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: functions/pos-cognito-access-token/
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Timeout: 30
+      Architectures:
+        - x86_64
+  ToastPartnersFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: functions/toast-partners/
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Timeout: 30
+      Architectures:
+        - x86_64
+  ToastAuthAccessTokenFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: functions/toast-auth-access-token/
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Timeout: 30
+      Architectures:
+        - x86_64
+  ToastPartnerLocationOrders:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: functions/toast-partner-location-orders/
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Timeout: 30
+      Architectures:
+        - x86_64
+  IngestLocationToastOrder:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: functions/ingest-location-toast-order/
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Timeout: 30
+      Architectures:
+        - x86_64
+  AccessTokenTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: "posIntegrationExpiringAccessTokens"
+      AttributeDefinitions:
+        - AttributeName: ProviderName
+          AttributeType: S
+      KeySchema:
+        - AttributeName: ProviderName
+          KeyType: HASH
+
+
+Outputs:
+  ToastIntegrationStateMachineArn:
+    Description: "Toast integration state machine ARN"
+    Value: !Ref ToastIntegrationStateMachine.Arn
